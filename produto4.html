@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moletom Oversized Street — RQG Store</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #f5f5f5; }
+
+    header {
+      background: #222;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header .logo { color: #e0b84a; font-size: 20px; font-weight: bold; letter-spacing: 2px; text-decoration: none; }
+    header span { color: #aaa; font-size: 13px; }
+
+    .pagina {
+      max-width: 860px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      display: flex;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .foto {
+      width: 380px;
+      min-height: 420px;
+      flex-shrink: 0;
+      background: #f0f0f0;
+    }
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detalhes {
+      padding: 30px;
+      flex: 1;
+    }
+
+    .cat {
+      font-size: 11px;
+      color: #e0b84a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .detalhes h1 {
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .precos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .preco { font-size: 26px; font-weight: bold; color: #222; }
+    .preco-antigo { font-size: 14px; text-decoration: line-through; color: #999; }
+
+    .desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .label { font-size: 12px; color: #888; margin-bottom: 8px; }
+
+    .tams {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .tam-btn {
+      padding: 6px 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: white;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tam-btn:hover, .tam-btn.selecionado {
+      background: #222;
+      color: white;
+      border-color: #222;
+    }
+
+    .btn-comprar {
+      width: 100%;
+      background: #e0b84a;
+      color: #222;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .btn-comprar:hover { background: #c9a33e; }
+
+    .btn-voltar {
+      display: inline-block;
+      margin: 0 20px 30px;
+      font-size: 13px;
+      color: #666;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .pagina { flex-direction: column; margin: 16px; }
+      .foto { width: 100%; height: 280px; min-height: unset; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">RQG Store</a>
+  <span>/ Moletom Oversized Street</span>
+</header>
+
+<br>
+<a class="btn-voltar" onclick="window.close()">&#8592; Fechar e voltar</a>
+
+<div class="pagina">
+  <div class="foto">
+    <img src="moletom.webp" alt="Moletom Oversized Street">
+  </div>
+  <div class="detalhes">
+    <div class="cat">Unissex</div>
+    <h1>Moletom Oversized Street</h1>
+
+    <div class="precos">
+      <span class="preco">R$ 219,90</span>
+      <span class="preco-antigo">R$ 269,90</span>
+    </div>
+
+    <p class="desc">Moletom oversized com caimento solto e moderno. Estilo streetwear para qualquer look.</p>
+
+    <p class="label">Selecione o tamanho:</p>
+    <div class="tams">
+      <button class="tam-btn">M</button><button class="tam-btn">G</button><button class="tam-btn">GG</button>
+    </div>
+
+    <button class="btn-comprar" onclick="alert('Produto adicionado ao carrinho!')">
+      🛒 Adicionar ao carrinho
+    </button>
+  </div>
+</div>
+
+<script>
+  // Selecionar tamanho
+  document.querySelectorAll('.tam-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tam-btn').forEach(function(b) { b.classList.remove('selecionado'); });
+      btn.classList.add('selecionado');
+    });
+  });
+</script>
+</body>
+</html>
